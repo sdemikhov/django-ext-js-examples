@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "django-ext-js-examples"
+version = "0.1.0"
+description = "Some examples of django and ext-js combination"
+authors = ["Sergey Demikhov"]
+license = "GPL-3.0-only"
+
+[tool.poetry.dependencies]
+python = "^3.7"
+django = "^3.1.3"
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry>=0.12"]
+build-backend = "poetry.masonry.api"
