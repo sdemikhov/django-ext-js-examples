@@ -13,3 +13,4 @@ bootstrap.*
 classic.json*
 modern.json*
 .sencha
+*.log

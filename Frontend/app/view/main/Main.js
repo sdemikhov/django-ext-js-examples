@@ -29,16 +29,7 @@ Ext.define('Frontend.view.main.Main', {
             title: 'Login check',
             iconCls: 'x-fa fa-user',
             items: [{
-                xtype: 'loginform'
-            }]
-        },
-        {
-            title: 'CRUD',
-            iconCls: 'x-fa fa-home',
-            layout: 'fit',
-            // The following grid shares a store with the classic version's grid as well!
-            items: [{
-                xtype: 'mainlist'
+                xtype: 'loginForm'
             }]
         },
     ]

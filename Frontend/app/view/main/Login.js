@@ -2,22 +2,22 @@ Ext.define(
     'Frontend.view.main.Login', 
     {
         extend: 'Ext.form.Panel',
-        xtype: 'loginform',
+        xtype: 'loginForm',
         items: [{
              xtype: 'textfield',
-             name: 'login',
-             label: 'login'
+             name: 'username',
+             label: 'login',
          }],
         buttonAlign: 'left',
         bodyPadding: 10,
         buttons: [
             {
                 text: 'Check',
-                listeners: {
-                    click: 'onLoginClick'
-                }
+                handler: 'onLoginClick'
+                
             }
         ],
-        
+        width: 300,
+
     }
 );

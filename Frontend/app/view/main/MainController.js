@@ -6,18 +6,24 @@ Ext.define('Frontend.view.main.MainController', {
     extend: 'Ext.app.ViewController',
 
     alias: 'controller.main',
-
-    onItemSelected: function (sender, record) {
-        Ext.Msg.confirm('Confirm', 'Are you sure?', 'onConfirm', this);
-    },
-
-    onConfirm: function (choice) {
-        if (choice === 'yes') {
-            //
-        }
-    },
-    onLoginClick: function() {
-        //const form = this.getView();
-        console.log('123123');
+    onLoginClick: function(button) {      
+        const form = button.up('formpanel');
+        const params = form.getValues();      
+        Ext.Ajax.request({
+            url: 'http://127.0.0.1:8000/api/user/login',
+             success: function(response, opts) {
+                 const obj = Ext.decode(response.responseText);
+                 Ext.Msg.alert('Validation result', String(obj.result));
+             },
+             failure: function(response, opts) {
+                 Ext.Msg.alert(
+                    'Error',
+                    'server-side failure with status code ' + response.status
+                );
+             },
+            method: 'POST',
+            params: params,
+             
+        });
     },
 });
